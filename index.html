@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+
 </head>
+
 <body>
-  <ul class = "numbers">
-    <li class = "number"></li>
-    <li class = "number"></li>
-    <li class = "number"></li>
-    <li class = "number"></li>
-    <li class = "number"></li>
-    <li class = "number"></li>
-    <li class = "number"></li>
+  <ul class="numbers">
+    <li class="number"></li>
+    <li class="number"></li>
+    <li class="number"></li>
+    <li class="number"></li>
+    <li class="number"></li>
+    <li class="number"></li>
+    <li class="number"></li>
   </ul>
+  <button>Press</button>
+  <script>
+    let numbersLi = [...document.querySelectorAll('.number')];
+    let $button = document.querySelector('button');
+
+    function uniq(array) {
+      return [...new Set(array)];
+    }
+
+    $button.onclick = function () {
+      let numbers = [];
+      while (numbers.length !== 7) {
+        numbers.push(Math.floor(Math.random() * 45) + 1);
+        numbers = uniq(numbers);
+      }
+      numbersLi.forEach((numberLi, index) => numberLi.textContent = numbers[index]);
+      console.log(1);
+    }
+  </script>
 </body>
+
 </html>

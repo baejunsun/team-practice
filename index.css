@@ -1,6 +1,6 @@
 .numbers {
   display: flex;
-
+  list-style-type: none;
 }
 .number {
   background-color: tomato;

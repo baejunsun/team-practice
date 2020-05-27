@@ -19,18 +19,25 @@
     <li class="number"></li>
     <li class="number"></li>
   </ul>
-    <script>
-      let numbersLi = [...document.querySelectorAll('.number')];
+  <button>Press</button>
+  <script>
+    let numbersLi = [...document.querySelectorAll('.number')];
+    let $button = document.querySelector('button');
+
+    function uniq(array) {
+      return [...new Set(array)];
+    }
+
+    $button.onclick = function () {
       let numbers = [];
-      function uniq(array) {
-        return [...new Set(array)];
-      }
-      while( numbers.length !== 7 ) {
+      while (numbers.length !== 7) {
         numbers.push(Math.floor(Math.random() * 45) + 1);
         numbers = uniq(numbers);
       }
       numbersLi.forEach((numberLi, index) => numberLi.textContent = numbers[index]);
-    </script>
+      console.log(1);
+    }
+  </script>
 </body>
 
 </html>
